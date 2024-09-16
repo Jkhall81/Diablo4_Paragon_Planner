@@ -28,14 +28,46 @@ export class BasicBoard extends ParagonBoard {
 
       // Third Row
       { x: 3, y: 2, type: "Magic Node", stats: { Armor: 50 } },
-      // Fourth Row
+      { x: 7, y: 2, type: "Magic Node", stats: { Damage: 0.05 } },
 
-      // Fifth Row
+      // Fourth Row
+      {
+        x: 3,
+        y: 3,
+        type: "Rare Node",
+        name: "Tenacity",
+        stats: { MaximumLife: 0.08, Armor: 100 },
+        bonus: { MaximumLife: 0.04, requirement: { Willpower: 200 } },
+      },
+      { x: 4, y: 3, type: "Magic Node", stats: { MaximumLife: 0.02 } },
+      { x: 6, y: 3, type: "Magic Node", stats: { MaximumLife: 0.02 } },
+      {
+        x: 7,
+        y: 3,
+        type: "Rare Node",
+        name: "Prime",
+        stats: { Damage: 0.2, MaximumLife: 0.04 },
+        bonus: { Damage: 0.1, requirement: { Intelligence: 160 } },
+      },
+
+      // Fifth Row,
+      { x: 3, y: 4, type: "Magic Node", stats: { MaximumLife: 0.02 } },
+      { x: 4, y: 4, type: "Magic Node", stats: { Armor: 50 } },
+      { x: 6, y: 4, type: "Magic Node", stats: { Damage: 0.05 } },
+      { x: 7, y: 4, type: "Magic Node", stats: { MaximumLife: 0.02 } },
 
       // Sixth Row
+      { x: 4, y: 5, type: "Common Node", stats: { Intelligence: 5 } },
+      { x: 6, y: 5, type: "Common Node", stats: { Willpower: 5 } },
 
       // Seventh Row
+      { x: 3, y: 6, type: "Common Node", stats: { Dexterity: 5 } },
+      { x: 4, y: 6, type: "Common Node", stats: { Willpower: 5 } },
+      { x: 5, y: 6, type: "Common Node", stats: { Dexterity: 5 } },
+      { x: 6, y: 6, type: "Common Node", stats: { Intelligence: 5 } },
+      { x: 7, y: 6, type: "Common Node", stats: { Willpower: 5 } },
 
+      // Eighth Row
       {
         x: 5,
         y: 14,
