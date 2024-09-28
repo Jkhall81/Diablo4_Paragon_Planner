@@ -1,0 +1,108 @@
+// First board
+import { ParagonBoard } from "./ParagonBoard";
+import { ParagonTile } from "./ParagonTile";
+
+export class BasicBoard extends ParagonBoard {
+  constructor() {
+    super(21, 21);
+    this.initializeTiles();
+  }
+
+  initializeTiles() {
+    // Define starting tile and ending tile (link to next board)
+    this.startTile = { x: 0, y: 0 };
+    this.endTileOne = { x: 0, y: 0 };
+    this.endTileTwo = {x: 0, y: 0};
+    this.endTileThree = {x: 0, y: 0};
+
+    const tileConfigs = [
+      // First Row
+      
+
+      // Second Row
+     
+
+      // Third Row
+      
+
+      // Fourth Row
+     
+
+      // Fifth Row,
+     
+
+      // Sixth Row
+     
+
+      // Seventh Row
+      
+
+      // Eighth Row
+     
+
+      // Ninth Row
+      
+
+      // Tenth Row
+     
+
+      // Eleventh Row
+     
+
+      // Twelvth Row
+     
+
+      // Thirteenth Row
+
+
+      // Fourteenth Row
+      
+
+      // Fifteenth Row
+
+
+      // Sixteenth Row
+
+
+      // Seventheen Row
+
+
+      // Eighteenth Row
+
+
+      // Nineteenth Row
+
+
+      // Twentieth Row
+
+
+      // Twenty First Row
+    ]
+
+    // Populate the grid with tiles based on the config
+    tileConfigs.forEach((config) => {
+      this.grid[config.x][config.y] = new ParagonTile(
+        config.type,
+        config.stats,
+        { x: config.x, y: config.y }
+      );
+    });
+  }
+  setStartTile(x, y) {
+    this.startTile = { x, y };
+  }
+
+  getStartTile() {
+    return this.startTile;
+  }
+
+  setEndTile(x, y) {
+    this.endTileOne = { x, y };
+    this.endTileTwo = {x: 0, y: 0};
+    this.endTileThree = {x: 0, y: 0};
+  }
+
+  getEndTile() {
+    return [this.endTileOne, this.endTileTwo, this.endTileThree];
+  }
+}
