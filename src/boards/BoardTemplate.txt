@@ -28,7 +28,7 @@ export class BasicBoard extends ParagonBoard {
       // Fourth Row
      
 
-      // Fifth Row,
+      // Fifth Row
      
 
       // Sixth Row

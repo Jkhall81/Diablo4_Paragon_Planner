@@ -1,6 +1,6 @@
 // First board
-import { ParagonBoard } from "./ParagonBoard";
-import { ParagonTile } from "./ParagonTile";
+import { ParagonBoard } from "../components/ParagonBoard.js";
+import { ParagonTile } from "../components/ParagonTile.js";
 
 export class BasicBoard extends ParagonBoard {
   constructor() {
@@ -12,9 +12,9 @@ export class BasicBoard extends ParagonBoard {
     // Define starting tile and ending tile (link to next board)
     // EndTile One at 3 O'clock, Two at 12 O'clock and Three at 9 O'clock
     this.startTile = { x: 10, y: 0 };
-    this.endTileOne = { x: 0, y: 0 };
-    this.endTileTwo = { x: 0, y: 0 };
-    this.endTileThree = { x: 0, y: 0 };
+    this.endTileOne = { x: 20, y: 10 };
+    this.endTileTwo = { x: 10, y: 20 };
+    this.endTileThree = { x: 0, y: 10 };
 
     const tileConfigs = [
       // First Row
@@ -154,16 +154,167 @@ export class BasicBoard extends ParagonBoard {
       { x: 1, y: 10, type: "Normal Node", stats: { Strength: 5 } },
       { x: 2, y: 10, type: "Normal Node", stats: { Intelligence: 5 } },
       { x: 3, y: 10, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 5, y: 10, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 9, y: 10, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 11, y: 10, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 12, y: 10, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 16, y: 10, type: "Magic Node", stats: { MaximumSpirit: 4 } },
+      { x: 18, y: 10, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 19, y: 10, type: "Normal Node", stats: { Willpower: 5 } },
+      {
+        x: 20,
+        y: 10,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
+
       // Twelvth Row
+      { x: 1, y: 11, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 5, y: 11, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 6, y: 11, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 7, y: 11, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 8, y: 11, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 9, y: 11, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 10, y: 11, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 11, y: 11, type: "Normal Node", stats: { Willpower: 5 } },
+
+      { x: 14, y: 11, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 15, y: 11, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 16, y: 11, type: "Normal Node", stats: { Dexterity: 5 } },
+
+      { x: 18, y: 11, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 19, y: 11, type: "Normal Node", stats: { Willpower: 5 } },
+
       // Thirteenth Row
+      { x: 1, y: 12, type: "Normal Node", stats: { Willpower: 5 } },
+
+      { x: 4, y: 12, type: "Magic Node", stats: { Dexterity: "TODO" } },
+      { x: 5, y: 12, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 6, y: 12, type: "Normal Node", stats: { Dexterity: 5 } },
+
+      { x: 9, y: 12, type: "Normal Node", stats: { Willpower: 5 } },
+
+      { x: 11, y: 12, type: "Magic Node", stats: { MaximumSpirit: 4 } },
+      { x: 12, y: 12, type: "Magic Node", stats: { MaximumSpirit: 4 } },
+      { x: 13, y: 12, type: "Magic Node", stats: { MaximumLife: 0.02 } },
+      { x: 14, y: 12, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 15, y: 12, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 16, y: 12, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 17, y: 12, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 18, y: 12, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 19, y: 12, type: "Normal Node", stats: { Dexterity: 5 } },
+
       // Fourteenth Row
+      { x: 1, y: 13, type: "Normal Node", stats: { Intelligence: 5 } },
+
+      {
+        x: 3,
+        y: 13,
+        type: "Rare Node",
+        name: "Resolve",
+        stats: { ResistAllElements: 0.04, Willpower: 10 },
+        bonus: {
+          ResistAllElements: 0.04,
+          requirement: { TODO: "TODO" },
+        },
+      },
+      { x: 4, y: 13, type: "Magic Node", stats: { ResistAllElements: 0.02 } },
+      { x: 5, y: 13, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 6, y: 13, type: "Normal Node", stats: { Intelligence: 5 } },
+
+      { x: 9, y: 13, type: "Normal Node", stats: { Willpower: 5 } },
+
+      {
+        x: 11,
+        y: 13,
+        type: "Rare Node",
+        name: "Natural Attunement",
+        stats: { MaximumSpirit: 8, MaximumLife: 0.04 },
+        bonus: {
+          MaximumSpirit: 8,
+          requirement: { Intelligence: 270 },
+        },
+      },
+      { x: 12, y: 13, type: "Magic Node", stats: { MaximumLife: 0.02 } },
+
       // Fifteenth Row
+      { x: 1, y: 14, type: "Normal Node", stats: { Strength: 5 } },
+      { x: 2, y: 14, type: "Magic Node", stats: { Strength: 5 } },
+      { x: 3, y: 14, type: "Magic Node", stats: { Strength: 5 } },
+      { x: 4, y: 14, type: "Magic Node", stats: { Strength: 5 } },
+      { x: 5, y: 14, type: "Normal Node", stats: { Willpower: 5 } },
+
+      { x: 7, y: 14, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 8, y: 14, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 9, y: 14, type: "Normal Node", stats: { Strength: 5 } },
+
+      { x: 12, y: 14, type: "Magic Node", stats: { MaximumSpirit: 4 } },
+
       // Sixteenth Row
-      // Seventheen Row
+      { x: 1, y: 15, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 2, y: 15, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 3, y: 15, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 4, y: 15, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 5, y: 15, type: "Glyph Socket" },
+      { x: 6, y: 15, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 7, y: 15, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 8, y: 15, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 9, y: 15, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 10, y: 15, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 11, y: 15, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 12, y: 15, type: "Normal Node", stats: { Dexterity: 5 } },
+
+      // Seventeenth Row
+      { x: 2, y: 16, type: "Normal Node", stats: { Willpower: 5 } },
+
+      { x: 5, y: 16, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 6, y: 16, type: "Magic Node", stats: { CoreSkillDamage: 0.07 } },
+      { x: 7, y: 16, type: "Magic Node", stats: { CoreSkillDamage: 0.07 } },
+      { x: 8, y: 16, type: "Magic Node", stats: { Intelligence: 7 } },
+
+      { x: 2, y: 16, type: "Normal Node", stats: { Intelligence: 5 } },
+
       // Eighteenth Row
+      { x: 5, y: 17, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 5, y: 17, type: "Magic Node", stats: { Intelligence: 7 } },
+      {
+        x: 5,
+        y: 17,
+        type: "Rare Node",
+        Name: "Harmony",
+        stats: { CoreSkillDamage: 0.14, Willpower: 10 },
+        bonus: {
+          CoreSkillDamage: 0.14,
+          requirement: { Intelligence: 270 },
+        },
+      },
+      { x: 10, y: 17, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 10, y: 17, type: "Normal Node", stats: { Strength: 5 } },
+
       // Nineteenth Row
+      { x: 4, y: 18, type: "Normal Node", stats: { Strength: 5 } },
+      { x: 5, y: 18, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 6, y: 18, type: "Magic Node", stats: { CoreSkillDamage: 0.07 } },
+      { x: 10, y: 18, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 10, y: 18, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 10, y: 18, type: "Normal Node", stats: { Dexterity: 5 } },
+
       // Twentieth Row
+      { x: 5, y: 19, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 6, y: 19, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 7, y: 19, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 8, y: 19, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 9, y: 19, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 10, y: 19, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 11, y: 19, type: "Normal Node", stats: { Willpower: 5 } },
+
       // Twenty First Row
+      {
+        x: 10,
+        y: 20,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
     ];
 
     // Populate the grid with tiles based on the config
@@ -183,13 +334,10 @@ export class BasicBoard extends ParagonBoard {
     return this.startTile;
   }
 
-  setEndTile(x, y) {
-    this.endTileOne = { x, y };
-    this.endTileTwo = { x: 0, y: 0 };
-    this.endTileThree = { x: 0, y: 0 };
-  }
-
   getEndTile() {
     return [this.endTileOne, this.endTileTwo, this.endTileThree];
   }
 }
+
+const board = new BasicBoard();
+board.printBoard();

@@ -150,5 +150,3 @@ export class BasicBoard extends ParagonBoard {
 
 const board = new BasicBoard();
 board.printBoard();
-
-console.log(board["grid"][1]);
