@@ -1,6 +1,7 @@
 // First board
 import { ParagonBoard } from "../components/ParagonBoard.js";
 import { ParagonTile } from "../components/ParagonTile.js";
+import { PrintBoard, SingleRotation } from "../utils/BoardRotation.js";
 
 export class BasicBoard extends ParagonBoard {
   constructor() {
@@ -341,3 +342,9 @@ export class BasicBoard extends ParagonBoard {
 
 const board = new BasicBoard();
 board.printBoard();
+
+// Rotate the board
+let rotatedBoard = SingleRotation(board);
+
+console.log("Rotated board:");
+PrintBoard(rotatedBoard);
