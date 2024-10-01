@@ -1,6 +1,7 @@
 // First board
-import { ParagonBoard } from "./ParagonBoard";
-import { ParagonTile } from "./ParagonTile";
+import { ParagonBoard } from "../components/ParagonBoard.js";
+import { ParagonTile } from "../components/ParagonTile.js";
+import { PrintBoard, RotateBoard } from "../utils/BoardRotation.js";
 
 export class BasicBoard extends ParagonBoard {
   constructor() {
@@ -17,7 +18,13 @@ export class BasicBoard extends ParagonBoard {
 
     const tileConfigs = [
       // First Row
-      
+      {
+        x: 10,
+        y: 0,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
+
 
       // Second Row
      

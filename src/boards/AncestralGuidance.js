@@ -1,4 +1,4 @@
-// First board
+// Ancestral Guidance
 import { ParagonBoard } from "../components/ParagonBoard.js";
 import { ParagonTile } from "../components/ParagonTile.js";
 import { PrintBoard, RotateBoard } from "../utils/BoardRotation.js";
