@@ -1,0 +1,108 @@
+// First board
+import { ParagonBoard } from "../components/ParagonBoard.js";
+import { ParagonTile } from "../components/ParagonTile.js";
+import { PrintBoard, RotateBoard } from "../utils/BoardRotation.js";
+
+export class BasicBoard extends ParagonBoard {
+  constructor() {
+    super(21, 21);
+    this.initializeTiles();
+  }
+
+  initializeTiles() {
+    // Define starting tile and ending tile (link to next board)
+    this.startTile = { x: 10, y: 0 };
+    this.endTileOne = { x: 20, y: 10 };
+    this.endTileTwo = { x: 10, y: 20 };
+    this.endTileThree = { x: 0, y: 10 };
+
+    const tileConfigs = [
+      // First Row
+      {
+        x: 10,
+        y: 0,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
+
+      // Second Row
+
+      // Third Row
+
+      // Fourth Row
+
+      // Fifth Row
+
+      // Sixth Row
+
+      // Seventh Row
+
+      // Eighth Row
+
+      // Ninth Row
+
+      // Tenth Row
+
+      // Eleventh Row
+      {
+        x: 0,
+        y: 10,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
+
+      {
+        x: 20,
+        y: 10,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
+
+      // Twelvth Row
+
+      // Thirteenth Row
+
+      // Fourteenth Row
+
+      // Fifteenth Row
+
+      // Sixteenth Row
+
+      // Seventheen Row
+
+      // Eighteenth Row
+
+      // Nineteenth Row
+
+      // Twentieth Row
+
+      // Twenty First Row
+      {
+        x: 10,
+        y: 20,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
+    ];
+
+    // Populate the grid with tiles based on the config
+    tileConfigs.forEach((config) => {
+      this.grid[config.x][config.y] = new ParagonTile(
+        config.type,
+        config.stats,
+        { x: config.x, y: config.y }
+      );
+    });
+  }
+  setStartTile(x, y) {
+    this.startTile = { x, y };
+  }
+
+  getStartTile() {
+    return this.startTile;
+  }
+
+  getEndTile() {
+    return [this.endTileOne, this.endTileTwo, this.endTileThree];
+  }
+}

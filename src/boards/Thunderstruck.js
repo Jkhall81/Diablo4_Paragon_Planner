@@ -403,12 +403,6 @@ export class BasicBoard extends ParagonBoard {
     return this.startTile;
   }
 
-  setEndTile(x, y) {
-    this.endTileOne = { x, y };
-    this.endTileTwo = { x: 0, y: 0 };
-    this.endTileThree = { x: 0, y: 0 };
-  }
-
   getEndTile() {
     return [this.endTileOne, this.endTileTwo, this.endTileThree];
   }

@@ -11,11 +11,10 @@ export class BasicBoard extends ParagonBoard {
 
   initializeTiles() {
     // Define starting tile and ending tile (link to next board)
-    this.startTile = { x: 0, y: 0 };
-    this.endTileOne = { x: 0, y: 0 };
-    this.endTileTwo = {x: 0, y: 0};
-    this.endTileThree = {x: 0, y: 0};
-
+    this.startTile = { x: 10, y: 0 };
+    this.endTileOne = { x: 20, y: 10 };
+    this.endTileTwo = { x: 10, y: 20 };
+    this.endTileThree = { x: 0, y: 10 };
     const tileConfigs = [
       // First Row
       {
@@ -54,6 +53,19 @@ export class BasicBoard extends ParagonBoard {
      
 
       // Eleventh Row
+      {
+        x: 0,
+        y: 10,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
+
+      {
+        x: 20,
+        y: 10,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
      
 
       // Twelvth Row
@@ -84,6 +96,12 @@ export class BasicBoard extends ParagonBoard {
 
 
       // Twenty First Row
+      {
+        x: 10,
+        y: 20,
+        type: "Board Attachment Gate",
+        stats: { Strength: 5, Intelligence: 5, Willpower: 5, Dexterity: 5 },
+      },
     ]
 
     // Populate the grid with tiles based on the config
@@ -101,12 +119,6 @@ export class BasicBoard extends ParagonBoard {
 
   getStartTile() {
     return this.startTile;
-  }
-
-  setEndTile(x, y) {
-    this.endTileOne = { x, y };
-    this.endTileTwo = {x: 0, y: 0};
-    this.endTileThree = {x: 0, y: 0};
   }
 
   getEndTile() {
