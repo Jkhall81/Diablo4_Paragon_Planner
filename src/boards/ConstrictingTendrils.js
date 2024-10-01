@@ -26,16 +26,124 @@ export class BasicBoard extends ParagonBoard {
       },
 
       // Second Row
+      { x: 5, y: 1, type: "Magic Node", stat: { Dexterity: 7 } },
+
+      { x: 9, y: 1, type: "Normal Node", stat: { Willpower: 5 } },
+      { x: 10, y: 1, type: "Normal Node", stat: { Intelligence: 5 } },
 
       // Third Row
+      { x: 4, y: 2, type: "Magic Node", stats: { Dexterity: 7 } },
+      {
+        x: 5,
+        y: 2,
+        type: "Rare Node",
+        name: "Courage",
+        stats: { MaximumLife: 0.04, Willpower: 10 },
+        bonus: { MaximumLife: 0.04, requirement: { Dexterity: 260 } },
+      },
+      { x: 6, y: 2, type: "Magic Node", stats: { MaximumLife: 0.04 } },
+
+      { x: 8, y: 2, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 9, y: 2, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 10, y: 2, type: "Normal Node", stats: { Willpower: 5 } },
 
       // Fourth Row
+      { x: 4, y: 3, type: "Magic Node", stats: { MaximumLife: 0.02 } },
+      { x: 5, y: 3, type: "Magic Node", stats: { MaximumLife: 0.02 } },
+
+      { x: 7, y: 3, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 7, y: 3, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 7, y: 3, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 7, y: 3, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 7, y: 3, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 7, y: 3, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 7, y: 3, type: "Normal Node", stats: { Dexterity: 5 } },
 
       // Fifth Row
+      { x: 2, y: 4, type: "Magic Node", stats: { Intelligence: 7 } },
+      {
+        x: 3,
+        y: 4,
+        type: "Magic Node",
+        stats: { NatureMagicSkillDamage: 0.05 },
+      },
+
+      { x: 5, y: 4, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 6, y: 4, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 7, y: 4, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 8, y: 4, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 9, y: 4, type: "Normal Node", stats: { Strength: 5 } },
+
+      { x: 11, y: 4, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 11, y: 4, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 11, y: 4, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 11, y: 4, type: "Magic Node", stats: { DamageToElites: 0.08 } },
 
       // Sixth Row
+      { x: 1, y: 5, type: "Magic Node", stats: { Intelligence: 7 } },
+      {
+        x: 1,
+        y: 5,
+        type: "Rare Node",
+        name: "Natures Will",
+        stats: { NatureMagicSkillDamage: 0.1, Willpower: 10 },
+        bonus: {
+          NatureMagicSkillDamage: 0.1,
+          requirement: { Intelligence: 270 },
+        },
+      },
+      {
+        x: 1,
+        y: 5,
+        type: "Magic Node",
+        stats: { NatureMagicSkillDamage: 0.05 },
+      },
+      { x: 1, y: 5, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 1, y: 5, type: "Glyph Socket" },
+      { x: 1, y: 5, type: "Normal Node", stats: { Intelligence: 5 } },
+      { x: 1, y: 5, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 1, y: 5, type: "Normal Node", stats: { Willpower: 5 } },
+      { x: 1, y: 5, type: "Normal Node", stats: { Willpower: 5 } },
+
+      {
+        x: 1,
+        y: 5,
+        type: "Magic Node",
+        stats: { NatureMagicSkillDamage: 0.05 },
+      },
+      {
+        x: 1,
+        y: 5,
+        type: "Magic Node",
+        stats: { NatureMagicSkillDamage: 0.05 },
+      },
 
       // Seventh Row
+      {
+        x: 2,
+        y: 6,
+        type: "Magic Node",
+        stats: { NatureMagicSkillDamage: 0.05 },
+      },
+
+      { x: 4, y: 6, type: "Normal Node", stats: { Strength: 5 } },
+      { x: 5, y: 6, type: "Normal Node", stats: { Willpower: 5 } },
+
+      { x: 7, y: 6, type: "Normal Node", stats: { Dexterity: 5 } },
+      { x: 8, y: 6, type: "Normal Node", stats: { Intelligence: 5 } },
+
+      {
+        x: 13,
+        y: 6,
+        type: "Rare Node",
+        name: "Devastation",
+        stats: { NatureMagicSkillDamage: 0.05, DamageToElites: 0.16 },
+        bonus: {
+          NatureMagicSkillDamage: 0.1,
+          requirement: { Intelligence: 270 },
+        },
+      },
+      { x: 14, y: 6, type: "Magic Node", stats: { DamageToElites: 0.08 } },
 
       // Eighth Row
 
